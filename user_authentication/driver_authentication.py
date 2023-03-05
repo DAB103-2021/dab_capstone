@@ -55,7 +55,7 @@ print("Matched Driver Id is= ", row[0])
 print("Matched Driver name is= ", row[1])
 
 
-cursor.execute("UPDATE dr_vh_auth SET dAuthImage_Status = ? WHERE authentication_id = ?", ("Success",auth_id))
+cursor.execute("UPDATE dr_vh_auth SET dAuthImage_Status = ? , did = ? WHERE authentication_id = ?", ("Success",row[0],auth_id))
 
 cnxn.commit()
 
